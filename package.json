@@ -9,20 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-three/drei": "^9.25.3",
     "@react-three/fiber": "^8.6.2",
     "@react-three/postprocessing": "^2.6.2",
-    "@theatre/core": "^0.4.7",
-    "@theatre/r3f": "^0.4.0-dev.23",
     "gsap": "^3.11.0",
+    "lil-gui": "^0.17.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "three": "^0.144.0",
-    "threejs-meshline": "^2.0.12"
+    "threejs-meshline": "^2.0.12",
+    "zustand": "^4.1.1"
   },
   "devDependencies": {
-    "@theatre/studio": "^0.4.7",
+    "@theatre/core": "0.5",
+    "@theatre/r3f": "0.5",
+    "@theatre/studio": "0.5",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5"
   }

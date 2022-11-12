@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    width: fit-content;
+}
+.index{
+    padding-top: 0.75rem;
+    opacity: 0.75;
+
+}
+.title{
+    font-size: 1.75rem;
+    font-weight: 700;
+    opacity: 0.75;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+}
+.text{
+    width: fit-content;
+}
+.label-wrapper{
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: flex;
+    gap: 0.25rem;
+    width: fit-content;
+}
+
+.arrow{
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    opacity: 0;
+    animation: swing 0.75s infinite alternate ease-in-out
+}
+
+@keyframes swing {
+    0%{
+        margin-left: 0.5rem
+    }
+    100%{
+        margin-left: 1rem;
+    }
+}

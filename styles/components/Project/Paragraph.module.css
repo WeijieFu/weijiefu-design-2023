@@ -1,0 +1,10 @@
+.container{
+    padding: 2rem 0 2rem var(--padding-horizontal);
+    width: 50vw;
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    padding: 4rem var(--padding-horizontal)
+}
+.link{
+    margin-bottom: 4rem;
+    margin-left: 40vw;
+    cursor: pointer;
+    transition: var(--transition-hover-text);
+    width: fit-content;
+}
+.link:hover{
+    opacity: 0.5;
+}
+.frame {
+    width: 100%;
+
+    border: none;
+    user-select: none;
+    pointer-events: none;
+}

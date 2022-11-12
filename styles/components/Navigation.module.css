@@ -1,0 +1,22 @@
+.container{
+    font-size: 1rem;
+    font-weight: 500;
+
+    position:fixed;
+    right: 2.5rem;
+    top:3rem;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    display: flex;
+    gap: 1rem;
+
+    z-index: 10;
+}
+.item{
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+

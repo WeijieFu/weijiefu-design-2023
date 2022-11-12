@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    margin: 4rem var(--padding-horizontal);
+
+}
+.column{
+    width: 50%;
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.column video {
+    width: 80%;
+    border-radius: 2rem;
+    overflow: hidden;
+    align-self: flex-end;
+}
+
+.paragraph{
+
+    margin: 0;
+    
+}

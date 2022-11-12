@@ -1,0 +1,12 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    color: var(--primary-text-color);
+    background-color: #fff;
+    line-height: 150%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+

@@ -1,0 +1,36 @@
+.container{
+    padding: 4rem  var(--padding-horizontal) 4rem 50vw;
+}
+
+.title{
+    font-size: 3rem;
+    font-weight: 500;
+    opacity: 0.25;
+    margin-top: 2rem ;
+
+}
+.icons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    padding: 4rem 0;
+}
+.icon-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8rem;
+    justify-self: center;
+}
+.icon{
+    font-size: 2rem;
+}
+.label{
+    display: inline;
+    text-align: center;
+    opacity: 0.25;
+    margin-top: 1rem;
+}
+.text{
+    margin-top: 5rem;
+}

@@ -1,24 +1,45 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
-
+import { useEffect, useRef } from "react"
 import Composition from "../src/scene/Composition"
 
+import Background from "../src/components/Home/Background"
+import Intro from "../src/components/Home/Intro"
+import Border from "../src/components/Home/Border"
+import Navigation from "../src/components/Navigation"
+import Slogan from "../src/components/Home/Slogan"
+import Contact from "../src/components/Home/Contact"
+import Menu from "../src/components/Menu"
+
+import useNavStore from "../state/navigation"
+import gsap from "gsap"
+import { BACKGROUNDCOLOR } from "../constants/colors"
+
 export default function Home() {
+  const nav = useNavStore()
+  const container = useRef()
+
+  useEffect(() => {
+    gsap.to(container.current, {
+      backgroundColor: BACKGROUNDCOLOR[`${nav.current}`],
+      duration: 1,
+    })
+  }, [nav.current])
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={container}>
       <Head>
         <title>WEIJIEFU DESIGN</title>
         <meta name="description" content="Weijie Fu Design Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Intro />
       <Composition />
-      {/* <div className={styles.title}>WEIJIE FU</div> */}
-      <div className={styles["shape-wrapper"]}>
-        <span className={styles["shape-1"]}></span>
-        <span className={styles["shape-2"]}></span>
-        <span className={styles["shape-3"]}></span>
-        <span className={styles["shape-4"]}></span>
-      </div>
+      <Background />
+      <Border />
+      <Navigation />
+      <Slogan />
+      <Contact />
+      <Menu />
     </div>
   )
 }

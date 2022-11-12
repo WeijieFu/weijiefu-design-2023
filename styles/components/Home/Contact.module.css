@@ -1,0 +1,56 @@
+.container{
+    position: fixed;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    display: flex;
+    GAP: 1.5rem;
+    align-items: center;
+    height: 1rem;
+}
+.square{
+    display: block;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+.square-outer{
+    display: block;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #fff;
+    position: relative;
+    animation: blink 2s infinite;
+}
+
+.square-inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #fff;
+    animation: blink 2s reverse infinite;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+
+.item{
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}

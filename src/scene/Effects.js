@@ -4,9 +4,9 @@ const Effects = () => {
   return (
     <EffectComposer>
       <Bloom luminanceThreshold={0} luminanceSmoothing={0.5} height={350} />
-      <SSAO intensity={5} radius={0.1} luminanceInfluence={0} bias={0.035} />
+      {/* <SSAO intensity={5} radius={0.1} luminanceInfluence={0} bias={0.035} /> */}
 
-      <Noise opacity={0.3} />
+      <Noise opacity={0.15} />
     </EffectComposer>
   )
 }
