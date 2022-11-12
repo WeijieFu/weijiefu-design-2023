@@ -74,12 +74,17 @@ const Intro = () => {
     <div className={styles["container"]} ref={container}>
       <Border />
       <div className={styles["title"]} ref={title}>
-        Hi, I'm Weijie Fu
+        Hi, I&apos;m Weijie Fu
       </div>
       <div className={styles["sub-title"]} ref={subTitle}>
         Experience designer, architect, and web developer. Currently building
-        world-class supply chain management tools for the jewellery industry{" "}
-        <a className={styles["link"]} href="https://loupe.work" target="_blank">
+        world-class supply chain management tools for the jewellery industry
+        <a
+          className={styles["link"]}
+          href="https://loupe.work"
+          target="_blank"
+          rel="noreferrer"
+        >
           @Loupe
         </a>
         .{" "}

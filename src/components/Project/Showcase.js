@@ -33,7 +33,7 @@ const Showcase = ({ theme, title, text, video, layout }) => {
           })}
       </div>
       <div className={styles["column"]}>
-        <video autoplay="autoplay" loop="loop" muted="muted">
+        <video autoPlay loop="loop" muted="muted">
           <source src={video} />
         </video>
       </div>

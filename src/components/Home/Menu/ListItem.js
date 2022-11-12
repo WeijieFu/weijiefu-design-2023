@@ -1,10 +1,9 @@
 import React, { forwardRef, useRef } from "react"
-import { useRouter } from "next/router"
+
 import styles from "../../../../styles/components/Menu/ListItem.module.css"
 import gsap from "gsap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const ListItem = forwardRef(({ data, index }, ref) => {
-  const router = useRouter()
   const label = useRef()
   const number = useRef()
   const title = useRef()
@@ -77,5 +76,7 @@ const ListItem = forwardRef(({ data, index }, ref) => {
     </div>
   )
 })
+
+ListItem.displayName = "ListItem"
 
 export default ListItem

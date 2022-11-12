@@ -13,8 +13,8 @@ const About = () => {
       <div className={styles["section"]}>
         <div className={styles["title"]}>About Me</div>
         <p className={styles["p"]}>
-          I'm an experience designer, professionally trained as an architect and
-          tinkering with code on my own.
+          I&apos;m an experience designer, professionally trained as an
+          architect and tinkering with code on my own.
         </p>
         <p className={styles["p"]}>
           My background as an architect has taught me the importance of empathy

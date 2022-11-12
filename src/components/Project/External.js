@@ -6,7 +6,7 @@ const External = ({ name, href, aspect }) => {
     window.open(href, "_blank")
   }
   return (
-    <div class={styles["container"]}>
+    <div className={styles["container"]}>
       <div className={styles["link"]} onClick={handleClick}>
         Enter {name} →
       </div>
