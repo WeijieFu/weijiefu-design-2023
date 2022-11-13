@@ -6,27 +6,31 @@ const Intro = ({ year, title, summary, roles }) => {
     <div className={styles["container"]}>
       <div className={styles["year"]}>{year}</div>
       <div className={styles["title"]}>{title}</div>
+      {summary && (
+        <div className={styles["summary"]}>
+          <div className={styles["subtitle"]}>Summary</div>
+          {summary.map((paragraph, index) => {
+            return (
+              <p className={styles["paragraph"]} key={index}>
+                {paragraph}
+              </p>
+            )
+          })}
+        </div>
+      )}
 
-      <div className={styles["summary"]}>
-        <div className={styles["subtitle"]}>Summary</div>
-        {summary.map((paragraph, index) => {
-          return (
-            <p className={styles["paragraph"]} key={index}>
-              {paragraph}
-            </p>
-          )
-        })}
-      </div>
-      <div className={styles["roles"]}>
-        <div className={styles["subtitle"]}>My Role</div>
-        {roles.map((paragraph, index) => {
-          return (
-            <p className={styles["line"]} key={index}>
-              {paragraph}
-            </p>
-          )
-        })}
-      </div>
+      {roles && (
+        <div className={styles["roles"]}>
+          <div className={styles["subtitle"]}>My Role</div>
+          {roles.map((paragraph, index) => {
+            return (
+              <p className={styles["line"]} key={index}>
+                {paragraph}
+              </p>
+            )
+          })}
+        </div>
+      )}
       <HomeButton />
     </div>
   )

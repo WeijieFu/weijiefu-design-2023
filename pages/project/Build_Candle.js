@@ -12,9 +12,16 @@ import Showcase from "../../src/components/Project/Showcase"
 import HeaderImage from "../../public/assets/img/build_candle/01_headder.png"
 import Audit01 from "../../public/assets/img/build_candle/02_crayon_01.png"
 import Audit02 from "../../public/assets/img/build_candle/02_crayon_02.png"
+import Questionnaire from "../../public/assets/img/build_candle/02_questionnaire.png"
+import Teams from "../../public/assets/img/build_candle/02_teams.png"
 import AuditStorybook from "../../public/assets/img/build_candle/03_storybook.png"
 import AtomicDesign from "../../public/assets/img/build_candle/04_atomic_design.png"
+import Hierarchy from "../../public/assets/img/build_candle/04_hierarchy.png"
 import Registration from "../../public/assets/img/build_candle/05_registration.png"
+import Tokens from "../../public/assets/img/build_candle/06_tokens.png"
+import StyleSheet from "../../public/assets/img/build_candle/06_stylesheet.png"
+import Component01 from "../../public/assets/img/build_candle/07_component_01.png"
+import Overview from "../../public/assets/img/build_candle/08_overview.png"
 
 const Build_Candle = () => {
   return (
@@ -83,6 +90,10 @@ const Build_Candle = () => {
             icon: ["fa-solid", "fa-eye"],
             label: "System Audit",
           },
+          {
+            icon: ["fa-solid", "fa-clipboard-question"],
+            label: "Questionnaire",
+          },
         ]}
       />
 
@@ -108,6 +119,13 @@ const Build_Candle = () => {
             content:
               "The component browser is an important bridge between designers and engineers. It’s a place for for both parties to make sure that the design is built and reused as it meant to be. Maintaining a component browser can be treated as a high-invest-low-short-term-return task, especially when the primary goal for a start-up company is to release features as fast as possible. But the long-term value of a robust component library is exponential. It’s a foundation to scale up your design and engineering team.",
           },
+        ]}
+      />
+      <Picture layout="center" src={AuditStorybook} alt="Audit Storybook" />
+
+      <Paragraph
+        title="Questionnaire and Interviews"
+        text={[
           {
             style: "dark",
             content:
@@ -115,9 +133,27 @@ const Build_Candle = () => {
           },
         ]}
       />
-      <Picture layout="center" src={AuditStorybook} alt="Audit Storybook" />
+      <Picture layout="center" src={Questionnaire} alt="Questionnaire" />
 
-      <SectionHeader index="03" title="Solution" />
+      <Paragraph
+        title="Prioritize and Get Started"
+        text={[
+          {
+            style: "dark",
+            content:
+              "Design sysetem is teamwork. We have gathered a group of designers, product managers and engineers to be involved in this project as the Design System core team. We collected the needs from different team and plan and prioritize the tasks.",
+          },
+        ]}
+      />
+      <Picture layout="center" src={Teams} alt="Teams Needs" />
+
+      <SectionHeader
+        index="03"
+        title="From Crayon to Candle"
+        text={[
+          "There are several principles implemented to make the new design system more organised, easier to use for every team and more maintainable.",
+        ]}
+      />
 
       <Paragraph
         title="1. Atomic Design Methodology"
@@ -125,12 +161,13 @@ const Build_Candle = () => {
           {
             style: "dark",
             content:
-              "Atomic Design is one of the most popular design phylosophies to create a system for design components. ",
+              "Atomic Design is one of the most popular design phylosophies to create a system for design components. Considering the complexity of the production code right now, we didn't want to go full on. In the first phase, we will rebuild components on atom, molecule and organism level. In the audit sheet, we assigned every existing components its new hierarchy and deprecated the ones are no longer in use.",
           },
         ]}
       />
 
       <Picture layout="center" src={AtomicDesign} alt="Atomic Design" />
+      <Picture layout="center" src={Hierarchy} alt="Component Hierarchy" />
 
       <Paragraph
         title="2. Naming Convention & Registration Sheet"
@@ -138,7 +175,7 @@ const Build_Candle = () => {
           {
             style: "dark",
             content:
-              "Atomic Design is one of the most popular design phylosophies to create a system for design components. ",
+              "Consistent naming is the easiest and the hardest thing to do when collaborating across the company. In order to make sure everyone is on the same page on every step we move forward, a centralized registration sheet was made and shared across the teams. In the spreadsheet, every component are named and indexed following an agreed format, and all the versions are tracked.",
           },
         ]}
       />
@@ -151,10 +188,27 @@ const Build_Candle = () => {
           {
             style: "dark",
             content:
-              "Atomic Design is one of the most popular design phylosophies to create a system for design components. ",
+              "Besides components, we also needed a lower-level elements/values to construct and maintain the design system -- spacing, color, typography, etc. Implementing design tokens has never been easier after Jan Six's Figma Tokens plugin.",
+          },
+          {
+            style: "dark",
+            content:
+              "Implementing tokens requires the teamwork. To get every team onboard, we took sessions to educate what tokens are, how to use figma tokens and how tokens can help designers better work with engineers. We converted the existing colors and styles into a set of base tokens and we use the alias tokens to capture the design decisions to create a set of semantic tokens.",
           },
         ]}
       />
+
+      <Picture layout="center" src={Tokens} alt="Figma Tokens" />
+      <Paragraph
+        text={[
+          {
+            style: "dark",
+            content:
+              "In the style guide, we specified where and which tokens are used for every component.",
+          },
+        ]}
+      />
+      <Picture layout="center" src={StyleSheet} alt="Style Sheet" />
 
       <Paragraph
         title="4. Component API"
@@ -162,10 +216,11 @@ const Build_Candle = () => {
           {
             style: "dark",
             content:
-              "Atomic Design is one of the most popular design phylosophies to create a system for design components. ",
+              "We put a lot of thoughts to create our new components. First, we communicated with the FE developer who is designated to build and maintain the component, how to relect the APIs in the AngularJS components in the design system as well. In this way, we are able keep a consistent component design from the start to end.",
           },
         ]}
       />
+      <Picture layout="center" src={Component01} alt="Component API" />
 
       <Paragraph
         title="5. Monthly Update Newletter"
@@ -173,11 +228,16 @@ const Build_Candle = () => {
           {
             style: "dark",
             content:
-              "Atomic Design is one of the most popular design phylosophies to create a system for design components. ",
+              "We update the latest changes to the design system in monthly sync meeting across the scrum teams and publish newsletters to the entire company.",
+          },
+          {
+            style: "dark",
+            content:
+              "By the time of creating this case study, we have 44 components documented and number is growing.",
           },
         ]}
       />
-
+      <Picture layout="center" src={Overview} alt="Overview" />
       <SectionHeader
         index="04"
         title="Impact"
@@ -185,6 +245,7 @@ const Build_Candle = () => {
           "1. Easier onboarding new designers and new front-end engineers.",
           "2. Easier communication between designers, front-end engineers and PMs.",
           "3. Simplify QA process.",
+          "Positive NPS across the borad :)",
         ]}
       />
 

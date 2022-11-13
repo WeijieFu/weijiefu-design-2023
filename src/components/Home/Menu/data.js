@@ -8,9 +8,13 @@ export const data = {
       title: "Build Candle",
       label: ["Design System", "Design Tokens", "Storybook", "Design Process"],
     },
+    // {
+    //   title: "Table",
+    //   label: ["Design System", "Design Tokens", "Figma Plugin"],
+    // },
     {
-      title: "Table",
-      label: ["Design System", "Design Tokens", "Figma Plugin"],
+      title: "Namet",
+      label: ["Design System", "Figma Plugin"],
     },
     {
       title: "Appitur",
@@ -41,20 +45,38 @@ export const data = {
   ],
   creativecoding: [
     {
-      title: "SWON",
-      label: ["design system", "user research", "prototype"],
+      title: "Rock Paper Scissors",
+      label: ["ThreeJS", "Blender", "Rigging"],
     },
     {
-      title: "Office Zhu",
-      label: ["design system", "user research", "prototype"],
+      title: "Hot Summer",
+      label: ["ThreeJS", "Blender", "Texture Baking"],
     },
     {
-      title: "Aeduire",
-      label: ["design system", "user research", "prototype"],
+      title: "Movie Night",
+      label: ["ThreeJS", "Blender", "Texture Baking"],
     },
     {
-      title: "Ltd.Ltd",
-      label: ["design system", "user research", "prototype"],
+      title: "Kinetic Typography",
+      label: ["HTML Canvas", "Particles"],
+    },
+
+    {
+      title: "Kiss",
+      label: ["ThreeJS", "WebGL", "Raymarching"],
+    },
+
+    {
+      title: "Swirl",
+      label: ["ThreeJS", "WebGL", "Particles"],
+    },
+    {
+      title: "Triangle Tunnel",
+      label: ["ThreeJS", "WebGL", "Blender"],
+    },
+    {
+      title: "Loop",
+      label: ["ThreeJS", "WebGL", "Blender"],
     },
   ],
 }

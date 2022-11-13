@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "../../../styles/components/Project/External.module.css"
 
-const External = ({ name, href, aspect }) => {
+const External = ({ name, href, aspect, interactive }) => {
   const handleClick = () => {
     window.open(href, "_blank")
   }
@@ -13,7 +13,10 @@ const External = ({ name, href, aspect }) => {
       <iframe
         src={href}
         className={styles["frame"]}
-        style={{ aspectRatio: aspect }}
+        style={{
+          aspectRatio: aspect,
+          pointerEvents: interactive ? "all" : "none",
+        }}
       />
     </div>
   )
