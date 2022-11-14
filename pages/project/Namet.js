@@ -15,6 +15,10 @@ import Current from "../../public/assets/img/namet/01_current.png"
 import Interview from "../../public/assets/img/namet/03_interview.png"
 import UserFlow from "../../public/assets/img/namet/04_user_flow.png"
 import Wireframe from "../../public/assets/img/namet/05_wireframe.png"
+import Codes from "../../public/assets/img/namet/06_codes.png"
+import Prototype from "../../public/assets/img/namet/07_prototype.png"
+import Example from "../../public/assets/img/namet/08_example.png"
+import Data from "../../public/assets/img/namet/09_data.png"
 
 const Namet = () => {
   return (
@@ -138,6 +142,52 @@ const Namet = () => {
       <Picture layout="center" src={Wireframe} alt="Wireframe" />
 
       <SectionHeader index="03" title="Get Hands Dirty" />
+
+      <Paragraph
+        title="Create Figma Plugin"
+        text={[
+          {
+            style: "dark",
+            content:
+              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+          },
+        ]}
+      />
+
+      <Picture layout="center" src={Codes} alt="Codes" />
+      <Paragraph
+        title="Wireframe"
+        text={[
+          {
+            style: "dark",
+            content:
+              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+          },
+        ]}
+      />
+      <Picture layout="center" src={Prototype} alt="Prototype" />
+      <Paragraph
+        title="Wireframe"
+        text={[
+          {
+            style: "dark",
+            content:
+              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+          },
+        ]}
+      />
+      <Picture layout="center" src={Example} alt="Example" />
+      <Paragraph
+        title="Wireframe"
+        text={[
+          {
+            style: "dark",
+            content:
+              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+          },
+        ]}
+      />
+      <Picture layout="center" src={Data} alt="Data" />
 
       <NextProject project="Appitur" />
     </div>

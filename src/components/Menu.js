@@ -17,12 +17,13 @@ const Menu = () => {
   const cameraState = useCameraStore()
 
   useEffect(() => {
+    const width = window.innerWidth
     if (nav.current) {
       gsap.fromTo(
         menu.current,
         { x: "0", opacity: 0 },
         {
-          x: "-50vw",
+          x: width < 600 ? "-100vw" : "-50vw",
           duration: 0.5,
           ease: "power2",
           opacity: 1,
@@ -32,7 +33,7 @@ const Menu = () => {
     if (!nav.current) {
       gsap.fromTo(
         menu.current,
-        { x: "-50vw", opacity: 1 },
+        { x: width < 600 ? "-100vw" : "-50vw", opacity: 1 },
         {
           x: "0",
           duration: 0.5,
