@@ -23,3 +23,12 @@
 .title:hover{
     opacity: 0.5;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .title{
+        font-size: 4rem;
+    }
+
+  
+  }

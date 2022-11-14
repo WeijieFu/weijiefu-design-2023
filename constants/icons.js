@@ -8,6 +8,7 @@ import {
   faInstagram,
   faLinkedin,
   faGithub,
+  faFigma,
 } from "@fortawesome/free-brands-svg-icons"
 import {
   faAnglesRight,
@@ -53,5 +54,6 @@ library.add(
   faPerson,
   faLayerGroup,
   faArrowLeft,
-  faEye
+  faEye,
+  faFigma
 )

@@ -249,7 +249,7 @@ const Build_Candle = () => {
         ]}
       />
 
-      <NextProject project="Table" />
+      <NextProject project="Namet" />
     </div>
   )
 }

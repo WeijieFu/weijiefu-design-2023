@@ -4,9 +4,10 @@ import styles from "../../../styles/components/Project/Showcase.module.css"
 const Showcase = ({ theme, title, text, video, layout }) => {
   return (
     <div
-      className={styles["container"]}
+      className={`${styles["container"]} ${
+        layout === "right" && styles["container-reverse"]
+      }`}
       style={{
-        flexDirection: layout === "left" ? "row" : "row-reverse",
         backgroundColor: theme,
       }}
     >
