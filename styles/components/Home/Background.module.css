@@ -95,7 +95,7 @@
     left:0;
     top: 50%;
     transform: translateY(-50%);
-
+    border-radius: 45vw;
   }
 
   .shape-2{
@@ -104,6 +104,7 @@
     left:0;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 45vw;
 
   }
 
@@ -114,6 +115,7 @@
     left:0;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 45vw;
 
   }
   .shape-4{
@@ -122,6 +124,6 @@
     left:0;
     top: 50%;
     transform: translateY(-50%);
-
+    border-radius: 45vw;
   }
   }
