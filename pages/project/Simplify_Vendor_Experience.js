@@ -23,9 +23,7 @@ const Simplify_Vendor_Experience = () => {
       <Intro
         year={2022}
         title={"Simplify Vendor Experience"}
-        summary={[
-          "Ocean Blue Project.inc is a grassroots environmental non profit. Their mission is to protect and conserve the world's ocean, beaches, and rivers, through education and awareness, by providing service learning projects, enhancing wildlife habitat, cleaning beaches and rivers, and by reducing pollution. This is an unsolicited project on Catchafire.org. The goal is to design a mobile app to improve how it delivers services and information to their beneficiaries, connects with supporters, or promotes events and programs.",
-        ]}
+        summary={["Not Ready Yet."]}
         roles={[
           "User Research",
           "Journey Mapping",
