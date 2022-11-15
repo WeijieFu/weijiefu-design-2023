@@ -246,7 +246,8 @@ const Build_Candle = () => {
         text={[
           "1. Easier onboarding new designers and new front-end engineers.",
           "2. Easier communication between designers, front-end engineers and PMs.",
-          "3. Simplify QA process.",
+          "3. Reduce Design to Development Time (Handoff)",
+          "4. Increase Average Task Completion Time.",
           "Positive NPS across the borad :)",
         ]}
       />
