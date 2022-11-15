@@ -19,6 +19,11 @@ const Password = () => {
       input.current.value = ""
     }
   }
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      handleVerify()
+    }
+  }
   const handleChange = (e) => {
     setPassword(e.target.value)
   }
@@ -29,6 +34,7 @@ const Password = () => {
           type="text"
           className={styles["input"]}
           onChange={handleChange}
+          onKeyDown={handleEnter}
           ref={input}
         />
         <div
