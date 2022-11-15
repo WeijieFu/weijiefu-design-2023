@@ -19,6 +19,7 @@ import Codes from "../../public/assets/img/namet/06_codes.png"
 import Prototype from "../../public/assets/img/namet/07_prototype.png"
 import Example from "../../public/assets/img/namet/08_example.png"
 import Data from "../../public/assets/img/namet/09_data.png"
+import Sheet from "../../public/assets/img/namet/10_sheets.png"
 
 const Namet = () => {
   return (
@@ -149,41 +150,53 @@ const Namet = () => {
           {
             style: "dark",
             content:
-              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+              "Create Figma Plugin is a great tool created by the community to easily scaffold the plugin script with Preact.",
           },
         ]}
       />
 
       <Picture layout="center" src={Codes} alt="Codes" />
       <Paragraph
-        title="Wireframe"
         text={[
           {
             style: "dark",
             content:
-              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+              "A set of ready-made components is also availble to create plugins that are also compliant with the Figma UI style.",
           },
         ]}
       />
       <Picture layout="center" src={Prototype} alt="Prototype" />
       <Paragraph
-        title="Wireframe"
+        title="Google Sheets API"
         text={[
           {
             style: "dark",
             content:
-              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+              "For the database, I decided to deploy an Apps Script in Google Sheets to handle GET and POST requests. Using Google Sheets enables us to easily visualize and manage the data.",
+          },
+        ]}
+      />
+
+      <Picture layout="center" src={Sheet} alt="Google Sheets App Script" />
+
+      <Paragraph
+        title="Happy User Happy Life"
+        text={[
+          {
+            style: "dark",
+            content:
+              "Now all of our new projects are using the plugin to name frames and components programmatically. And it's easier than ever to understand the components hierarchy.",
           },
         ]}
       />
       <Picture layout="center" src={Example} alt="Example" />
       <Paragraph
-        title="Wireframe"
+        title="Mine That Data"
         text={[
           {
             style: "dark",
             content:
-              "Thanks to Figma API documentation, after a brief reading, I was able to put together a wireframe that complies with the functionality Figma provides. The plugin contains lists of branches in each hierarchy and designers can click on the screen or block level to apply the correct naming.",
+              "The data we collected are further used by product operation to monitor changes, generate size maps and create user guides in Pendo. And there is a lot more to discover!",
           },
         ]}
       />
