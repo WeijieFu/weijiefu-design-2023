@@ -18,6 +18,7 @@ import Prototype from "../../public/assets/img/namet/07_prototype.png"
 import Example from "../../public/assets/img/namet/08_example.png"
 import Data from "../../public/assets/img/namet/09_data.png"
 import Sheet from "../../public/assets/img/namet/10_sheets.png"
+import Password from "../../src/components/Project/Password"
 
 const Namet = () => {
   return (
@@ -27,6 +28,7 @@ const Namet = () => {
         <meta name="description" content="Weijie Fu Design Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Password />
       <Intro
         year={2022}
         title={"Namet"}

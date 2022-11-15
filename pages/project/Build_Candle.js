@@ -22,6 +22,7 @@ import Tokens from "../../public/assets/img/build_candle/06_tokens.png"
 import StyleSheet from "../../public/assets/img/build_candle/06_stylesheet.png"
 import Component01 from "../../public/assets/img/build_candle/07_component_01.png"
 import Overview from "../../public/assets/img/build_candle/08_overview.png"
+import Password from "../../src/components/Project/Password"
 
 const Build_Candle = () => {
   return (
@@ -31,6 +32,7 @@ const Build_Candle = () => {
         <meta name="description" content="Weijie Fu Design Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Password />
       <Intro
         year={2022}
         title={"Build Candle"}

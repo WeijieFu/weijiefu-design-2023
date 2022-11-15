@@ -9,6 +9,7 @@ import NextProject from "../../src/components/Project/NextProject"
 import Showcase from "../../src/components/Project/Showcase"
 
 import HeaderImage from "../../public/assets/img/ocean_blue_project/05 banner.jpg"
+import Password from "../../src/components/Project/Password"
 
 const Simplify_Vendor_Experience = () => {
   return (
@@ -18,6 +19,7 @@ const Simplify_Vendor_Experience = () => {
         <meta name="description" content="Weijie Fu Design Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Password />
       <Intro
         year={2022}
         title={"Simplify Vendor Experience"}
