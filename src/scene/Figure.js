@@ -34,9 +34,11 @@ export default function Figure(props) {
     }, 4000)
 
     window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("touchmove", handleMouseMove)
     return () => {
       clearInterval(id)
       window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("touchmove", handleMouseMove)
     }
   }, [])
 
