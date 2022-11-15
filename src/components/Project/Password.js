@@ -10,6 +10,7 @@ const Password = () => {
       gsap.to(container.current, {
         opacity: 0,
         duration: 0.2,
+        height: 0,
         onComplete: () => {
           container.current.style.display = "none"
         },
