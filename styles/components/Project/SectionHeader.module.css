@@ -7,13 +7,13 @@
     font-weight: 500;
     opacity: 0.25;
     margin-top: 2rem ;
-
+  line-height: 100%;
 }
 .icons{
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
-    padding: 4rem 0;
+    margin: 4rem 0;
 }
 .icon-wrapper{
     display: flex;
@@ -44,6 +44,7 @@
 
     .title{
         font-size: 2.5rem;
+        line-height: 100%;
     }
   
   }
