@@ -31,7 +31,7 @@ const Simplify_Vendor_Experience = () => {
         year={2022}
         title={"Simplify Vendor Experience"}
         summary={[
-          "Simplify Vendor Experience , aka Catalogue, is a project initiated in Febuary 2022, aiming to improve the workflow for one of the major account types on the Loupe platform Vendors. I took part in the user research and led the design for the new assortment managing interfaces.",
+          "Simplify Vendor Experience , aka Catalogue, is a project initiated in February 2022, aiming to improve the workflow for one of the major account types on the Loupe platform Vendors. I took part in the user research and led the design for the new assortment managing interfaces.",
         ]}
         roles={[
           "User Research",
