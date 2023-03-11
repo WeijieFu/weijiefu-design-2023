@@ -78,14 +78,14 @@ const Intro = () => {
       </div>
       <div className={styles["sub-title"]} ref={subTitle}>
         Experience designer, architect, and web developer. Currently building
-        world-class supply chain management tools for the jewellery industry
+        world-class design system and automate design process
         <a
           className={styles["link"]}
-          href="https://loupe.work"
+          href="https://deel.com"
           target="_blank"
           rel="noreferrer"
         >
-          @Loupe
+          @DEEL
         </a>
         .{" "}
       </div>
