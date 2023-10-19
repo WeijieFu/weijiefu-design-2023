@@ -4,7 +4,7 @@ import styles from "../../../../styles/components/Menu/About.module.css"
 const About = () => {
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1BDM3atxoO3YZVJ79eg4CpuAsVWg6JCQp/view",
+      "https://drive.google.com/file/d/1yUZLgC_qsqInaOtl8vfnMOzqEij6mZIl/view?usp=share_link",
       "_ blank"
     )
   }
