@@ -32,7 +32,7 @@ const Build_Candle = () => {
         <meta name="description" content="Weijie Fu Design Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Password />
+      {/* <Password /> */}
       <Intro
         year={2022}
         title={"Build Candle"}
