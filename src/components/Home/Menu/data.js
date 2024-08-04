@@ -1,17 +1,17 @@
 export const data = {
   uiux: [
-    // {
-    //   title: "Simplify Vendor Experience",
-    //   label: ["Data Informed Design", "User Research", "UX/UI"],
-    // },
+    {
+      title: "Simplify Vendor Experience",
+      label: ["Data Informed Design", "User Research", "UX/UI"],
+    },
     {
       title: "Build Candle",
       label: ["Design System", "Design Tokens", "Storybook", "Design Process"],
     },
-    // {
-    //   title: "Table",
-    //   label: ["Design System", "Design Tokens", "Figma Plugin"],
-    // },
+    {
+      title: "Table",
+      label: ["Design System", "Design Tokens", "Figma Plugin"],
+    },
     {
       title: "Namet",
       label: ["Design System", "Figma Plugin"],
