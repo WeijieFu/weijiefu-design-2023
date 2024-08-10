@@ -1,17 +1,21 @@
 export const data = {
   uiux: [
     {
-      title: "Simplify Vendor Experience",
-      label: ["Data Informed Design", "User Research", "UX/UI"],
+      title: "Transform Deel UI",
+      label: ["Design System", "Tokenization", "Optimization", "Governance"],
     },
+    // {
+    //   title: "Simplify Vendor Experience",
+    //   label: ["Data Informed Design", "User Research", "UX/UI"],
+    // },
     {
       title: "Build Candle",
       label: ["Design System", "Design Tokens", "Storybook", "Design Process"],
     },
-    {
-      title: "Table",
-      label: ["Design System", "Design Tokens", "Figma Plugin"],
-    },
+    // {
+    //   title: "Table",
+    //   label: ["Design System", "Design Tokens", "Figma Plugin"],
+    // },
     {
       title: "Namet",
       label: ["Design System", "Figma Plugin"],
@@ -20,14 +24,14 @@ export const data = {
       title: "Appitur",
       label: ["User Research", "Product Strategy", "Interaction Design"],
     },
-    {
-      title: "Foodviction",
-      label: ["Site Audit", "Visual Identity Design", "Web Design"],
-    },
-    {
-      title: "Ocean Blue Project",
-      label: ["User Research", "Interaction Design"],
-    },
+    // {
+    //   title: "Foodviction",
+    //   label: ["Site Audit", "Visual Identity Design", "Web Design"],
+    // },
+    // {
+    //   title: "Ocean Blue Project",
+    //   label: ["User Research", "Interaction Design"],
+    // },
   ],
   webdev: [
     {
