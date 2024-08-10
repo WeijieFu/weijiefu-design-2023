@@ -228,7 +228,7 @@ const Transform_Deel_UI = () => {
 
       <Picture layout="center" src={Survey} alt="Metrics" />
 
-      <NextProject project="Build Candle" />
+      <NextProject project="Build_Candle" />
     </div>
   )
 }
