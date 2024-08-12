@@ -15,7 +15,7 @@
     opacity: 0.25;
     transform: translate(-5rem);
 
-    overflow-wrap: break-word;
+    /* overflow-wrap: break-word; */
     line-height: 100%;
 }
 .summary{
@@ -50,5 +50,15 @@
         font-size: 4rem;
         transform: translate(0rem);
  
+    }
+  }
+
+
+
+@media only screen and (max-width: 1200px) {
+   
+    .title{
+        font-size: 5rem;
+        /* transform: translate(0rem); */
     }
   }
