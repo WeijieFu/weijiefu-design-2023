@@ -1,6 +1,10 @@
 export const data = {
   uiux: [
     {
+      title: "Last Mile To Component Adoption",
+      label: ["Design System", "Adoption", "Figma Plugin"],
+    },
+    {
       title: "Transform Deel UI",
       label: ["Design System", "Tokenization", "Optimization", "Governance"],
     },
