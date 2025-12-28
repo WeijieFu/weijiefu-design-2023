@@ -81,11 +81,11 @@ const Intro = () => {
         world-class design system and automate design process
         <a
           className={styles["link"]}
-          href="https://deel.com"
+          href="https://monzo.com"
           target="_blank"
           rel="noreferrer"
         >
-          @DEEL
+          @Monzo
         </a>
         .{" "}
       </div>
