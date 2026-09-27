@@ -56,19 +56,11 @@ const Intro = () => {
     stage.setCurrent(1)
     cameraState.setPosition(POSITION_FRONT_CENTER)
   }
-  const hoverAnimation = gsap
-    .timeline()
-    .fromTo(
-      button.current,
-      { x: 0 },
-      { x: "0.5rem", duration: 0.2, ease: "none" }
-    )
-
   const handleMouseEnter = () => {
-    hoverAnimation.play()
+    gsap.to(button.current, { x: "0.5rem", duration: 0.2, ease: "none", overwrite: "auto" })
   }
   const handleMouseLeave = () => {
-    hoverAnimation.reverse()
+    gsap.to(button.current, { x: 0, duration: 0.2, ease: "none", overwrite: "auto" })
   }
   return (
     <div className={styles["container"]} ref={container}>

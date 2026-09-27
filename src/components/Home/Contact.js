@@ -23,46 +23,24 @@ const Contact = () => {
   }
   const DURATION = 0.2
   const DELAY = "-=0.1"
-  const timeline = gsap
-    .timeline({ paused: true })
-    .fromTo(
-      linkedin.current,
-      { y: "0.5rem", opacity: 0, pointerEvents: "none" },
-      { y: 0, opacity: 0.5, pointerEvents: "all", duration: DURATION },
-      DELAY
-    )
-    .fromTo(
-      instagram.current,
-      { y: "0.5rem", opacity: 0, pointerEvents: "none" },
-      { y: 0, opacity: 0.5, pointerEvents: "all", duration: DURATION },
-      DELAY
-    )
-    .fromTo(
-      dribbble.current,
-      { y: "0.5rem", opacity: 0, pointerEvents: "none" },
-      { y: 0, opacity: 0.5, pointerEvents: "all", duration: DURATION },
-      DELAY
-    )
-    .fromTo(
-      twitter.current,
-      { y: "0.5rem", opacity: 0, pointerEvents: "none" },
-      { y: 0, opacity: 0.5, pointerEvents: "all", duration: DURATION },
-      DELAY
-    )
-    .fromTo(
-      github.current,
-      { y: "0.5rem", opacity: 0, pointerEvents: "none" },
-      { y: 0, opacity: 0.5, pointerEvents: "all", duration: DURATION },
-      DELAY
-    )
+  const timeline = useRef(null)
+  useEffect(() => {
+    const animation = gsap.timeline({ paused: true })
+    for (const item of [linkedin, instagram, dribbble, twitter, github]) {
+      animation.fromTo(
+        item.current,
+        { y: "0.5rem", opacity: 0, pointerEvents: "none" },
+        { y: 0, opacity: 0.5, pointerEvents: "all", duration: DURATION },
+        DELAY
+      )
+    }
+    timeline.current = animation
+    return () => animation.kill()
+  }, [])
 
   useEffect(() => {
-    if (isLogoShown) {
-      timeline.play()
-    }
-    if (!isLogoShown) {
-      timeline.reverse()
-    }
+    if (isLogoShown) timeline.current?.play()
+    else timeline.current?.reverse()
   }, [isLogoShown])
   const onMouseEnter = (item) => {
     gsap.to(item.current, { opacity: 1, duration: DURATION })

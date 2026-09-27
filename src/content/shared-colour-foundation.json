@@ -1,0 +1,345 @@
+{
+  "slug": "one-palette-many-products",
+  "title": "Rebuilding Colour as Shared Infrastructure",
+  "summary": "Creating an accessible shared colour foundation for a fragmented multi-platform product ecosystem.",
+  "year": "2026",
+  "tags": [
+    "design systems",
+    "colour",
+    "design tokens"
+  ],
+  "caseStudy": {
+    "kicker": "design systems / colour foundations / Monzo",
+    "intro": [
+      "Often described as the UK’s favourite bank, Monzo is known for making banking feel warmer, simpler, and far more colourful than the banks that came before it. Colour is part of that character: confident, playful, and instantly recognisable.",
+      "But when I joined as a design system designer, the experience on screen was stronger than the system underneath it. Years of fast growth had left colour definitions spread across teams, design libraries, and codebases. The next chapter was not about making Monzo less colourful. It was about giving that colour a foundation strong enough for everything the product wanted to become.",
+      "This case study follows the work as a practical journey—from finding the gaps to designing a shared palette and planning a safe path to adoption."
+    ],
+    "sections": [
+      {
+        "type": "mediaRow",
+        "items": [
+          {
+            "source": "/assets/img/colour_foundation/monzo-01.png",
+            "alt": "Monzo product interface — view 01"
+          },
+          {
+            "source": "/assets/img/colour_foundation/monzo-03.png",
+            "alt": "Monzo product interface — view 03"
+          },
+          {
+            "source": "/assets/img/colour_foundation/monzo-02.png",
+            "alt": "Monzo product interface — view 02"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "A brilliant colour language with a structural gap",
+        "paragraphs": [
+          "Monzo grew by challenging what a bank could look and feel like. Its bright card, lively illustrations, and expressive product UI helped make money feel more human. Many of those colours were chosen with strong brand instinct, and that instinct worked.",
+          "What had not grown at the same pace was the system behind those choices. Colours were often selected for how they looked rather than how they would behave across text, backgrounds, interaction states, data visualisation, and accessibility settings. In some product combinations, that led to contrast failures and limited options for creating accessible experiences.",
+          "The foundations were also difficult to read and maintain. Legacy names described a colour’s history or appearance, but not useful properties such as tone, contrast behaviour, or place in a scale. A name might feel familiar to an experienced team member while telling a new designer or engineer very little about how the colour should be used."
+        ]
+      },
+      {
+        "type": "mediaPair",
+        "items": [
+          {
+            "source": "/assets/img/colour_foundation/03-mobile-figma-variables.png",
+            "alt": "The iOS and Android primitive colour variables in Figma",
+            "caption": "iOS and Android"
+          },
+          {
+            "source": "/assets/img/colour_foundation/04-web-figma-variables.png",
+            "alt": "The Business Banking web semantic colour variables in Figma",
+            "caption": "Business Banking web"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "The goal was evolution, not reinvention",
+        "paragraphs": [
+          "I joined the project with experience modernising design foundations in complex product organisations. The opportunity here was to bring that experience to Monzo without importing a generic system or flattening the character that made the brand special.",
+          "The goal was a more powerful colour foundation: one that kept Monzo’s existing hero colours, made accessibility easier to achieve, stayed in sync across platforms, and could expand safely as new needs appeared.",
+          "Just as important, the system had to be adoptable. A theoretically perfect palette would be useless if teams needed to redesign the product, change every platform at once, or learn hundreds of new choices overnight."
+        ]
+      },
+      {
+        "type": "quote",
+        "quote": "The challenge was not to replace Monzo’s colour. It was to give it room to grow without losing control."
+      },
+      {
+        "type": "text",
+        "title": "Following a colour from idea to production",
+        "paragraphs": [
+          "The audit started with a simple question: when somebody needs a new colour, what actually happens? The answer changed depending on the team and platform. Sometimes a value was added to a shared design library. Sometimes a raw value filled a local gap. Sometimes a colour already existed elsewhere, but there was no easy way to discover or reuse it.",
+          "From there, I mapped how colours were defined in Figma. Four libraries supported different parts of the experience, with primitives and semantic variables connected in different ways. Some web libraries inherited part of the mobile foundation, then extended it with extra values when web interactions needed more range.",
+          "The final step was code. Each platform maintained its own foundational palette and semantic references. Design and implementation stayed aligned through manual work rather than a shared distribution pipeline. That made colour consistency dependent on memory, communication, and local ownership."
+        ]
+      },
+      {
+        "type": "media",
+        "title": "Current mental model for colour iteration and refinement",
+        "mediaType": "image",
+        "placeholder": "[current colour mental model]",
+        "source": "/assets/img/colour_foundation/01-current-colour-model.png",
+        "alt": "Current mental model showing how brand colours flow into illustration, mobile, accessibility, and web products",
+        "suggestion": "",
+        "description": [
+          "Monzo’s hero colours formed the starting point for an extended brand palette, which then fed illustration and mobile product UI. Accessibility refinements and web requirements came further along that path, after many of the foundational choices had already been made.",
+          "This sequence helped preserve a recognisable brand, but it placed accessibility and cross-platform needs downstream. The opportunity was to consider those needs when shaping the shared palette, so each product would have suitable colours to work with from the start."
+        ],
+        "layout": "three-quarter"
+      },
+      {
+        "type": "media",
+        "title": "The current colour journey",
+        "mediaType": "image",
+        "placeholder": "[current-state distribution map]",
+        "source": "/assets/img/colour_foundation/05-current-distribution-model.png",
+        "alt": "Diagram of the current colour distribution model across design and code",
+        "suggestion": "Trace one colour from a request through Figma libraries into iOS, Android, web, backend-generated media, and marketing surfaces. Highlight manual handoffs and local additions. The diagram should make the ownership gaps visible at a glance.",
+        "description": [
+          "The distribution map shows how colour values moved from Figma into separate codebases. iOS, Android, and Business Banking web each maintained their own primitive and semantic layers, while individual services held colour constants directly. Most of these connections depended on manual updates; Monzo.com already used a plugin-assisted path.",
+          "As a result, one colour change could require several separate implementation steps. Without a shared distribution pipeline, keeping those copies aligned relied on teams coordinating each update. This made the handoffs—not just the palette itself—a central part of the problem to solve."
+        ],
+        "layout": "three-quarter"
+      },
+      {
+        "type": "comparison",
+        "title": "What the audit made clear",
+        "columns": [
+          "What was happening",
+          "What it meant"
+        ],
+        "rows": [
+          [
+            "No single source of truth",
+            "Values could drift or become outdated"
+          ],
+          [
+            "Accessibility considered late",
+            "Some useful combinations failed contrast"
+          ],
+          [
+            "Legacy descriptive names",
+            "Names did not explain tone or behaviour"
+          ],
+          [
+            "Raw values added locally",
+            "The system grew through exceptions"
+          ],
+          [
+            "Manual platform updates",
+            "Every change carried avoidable effort and risk"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Choosing the right colour model—and making it repeatable",
+        "paragraphs": [
+          "Before generating anything, we needed to choose what kind of colour system Monzo should become. Mature design systems solve this in different ways. Some keep a small set of named brand swatches. Others use hand-tuned numeric scales. More recent systems build scales in perceptual colour spaces, where each step is designed to feel like a meaningful change in lightness rather than an equal change in an RGB or HSL value.",
+          "Named swatches are easy to recognise, but names such as pale, mid, or deep do not explain how two colours relate or whether they can form an accessible pair. A hand-tuned numeric scale is easier to extend, but its steps can still be uneven when they are chosen by eye. RGB and HSL are useful formats for displaying and manipulating colour, yet equal mathematical steps in those spaces do not look equally light or dark to people.",
+          "A perceptual tonal palette was the strongest fit for this problem. Each colour family keeps a recognisable hue while moving through a shared tone scale from dark to light. Because tone represents perceived lightness, a step has a more consistent meaning across blue, green, red, and the rest of the palette. That gives designers and engineers a common way to read the system and makes contrast behaviour easier to predict.",
+          "For Monzo, I chose HCT—the Hue, Chroma, Tone model used by Material’s colour utilities—as the generation method. It offered mature tooling, a clear tonal structure, and a practical way to build around existing brand colours. It also allowed several source colours to be harmonised, which mattered because Monzo’s identity could not be reduced to one mechanically generated hue.",
+          "The tonal model does not replace accessibility testing. Every foreground and background pair still needs to be checked against current contrast requirements, and emerging perceptual guidance needs to be followed carefully. Its value is that accessibility is no longer an afterthought: the palette begins with a structure that makes usable combinations easier to find and maintain."
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Why a perceptual tonal palette fit Monzo",
+        "columns": [
+          "Approach",
+          "Where it helps—and where it stops"
+        ],
+        "rows": [
+          [
+            "Named brand swatches",
+            "Memorable and expressive, but hard to compare or extend systematically"
+          ],
+          [
+            "Hand-tuned numeric scales",
+            "Clearer order, but visual steps and contrast can still be uneven"
+          ],
+          [
+            "RGB or HSL generation",
+            "Simple to calculate, but equal values do not equal perceived lightness"
+          ],
+          [
+            "Perceptual tonal scale",
+            "Predictable lightness across hues, easier extension, and a stronger base for accessible pairs"
+          ]
+        ]
+      },
+      {
+        "type": "media",
+        "title": "Turning colour exploration into a repeatable workflow",
+        "mediaType": "image",
+        "placeholder": "[Figma tool walkthrough]",
+        "source": "/assets/img/colour_foundation/11-palette-generator-tool.png",
+        "alt": "Palette generator tool showing tonal colour controls and contrast preview",
+        "suggestion": "Show source colour selection, generated tonal options, contrast checking, palette comparison, and export. The visual should reveal what was automated and where human judgement still shaped the result.",
+        "description": [
+          "Exploring all of this by hand would be slow and inconsistent, so I built a Figma tool around the method. It could take selected source colours, generate and harmonise tonal options, preview the result, save candidate palettes, export values, and highlight useful contrast ranges.",
+          "The tool handled the repetitive colour maths, not the design judgement. Choosing which colours deserved to remain, where brand expression mattered more than perfect tone mapping, and which new steps solved a real product need still required review in context. The technology gave us a stronger decision surface; it did not make the decision for us."
+        ],
+        "layout": "three-quarter"
+      },
+      {
+        "type": "text",
+        "title": "Rebuilding the palette without changing the product",
+        "paragraphs": [
+          "Starting again with a completely new palette would have been easy on paper and disruptive in practice. Instead, the existing colours became the raw material for the new system.",
+          "I gathered the colours already used across product, web, and illustration, then grouped them by hue. The important brand colours stayed as anchors. Around them, a tonal model generated the missing steps needed for accessible text, interaction states, and more complex web use cases.",
+          "Existing colours were placed back into the nearest useful positions, even when they did not land on mathematically perfect values. Duplicate steps were removed. New colours were added only where they solved a real gap. This balance kept the UI familiar while giving every colour family a clearer and more predictable shape."
+        ]
+      },
+      {
+        "type": "media",
+        "mediaType": "image",
+        "placeholder": "[palette construction sequence]",
+        "source": "/assets/img/colour_foundation/13-harmonised-tonal-palette.png",
+        "alt": "Tonal palette exploration built from existing source colours",
+        "suggestion": "Show the real working sequence: gather existing colours, group by hue, mark brand anchors, generate tonal steps, restore existing values, remove duplicates, then test contrast. It should reveal how the new palette grows from Monzo’s current identity rather than replacing it.",
+        "layout": "center"
+      },
+      {
+        "type": "text",
+        "title": "One source, many kinds of use",
+        "paragraphs": [
+          "A better palette would still drift if every platform had to copy it by hand. The next part of the proposal was therefore about distribution, not colour selection."
+        ]
+      },
+      {
+        "type": "media",
+        "title": "The future distribution model",
+        "mediaType": "image",
+        "placeholder": "[shared token pipeline diagram]",
+        "source": "/assets/img/colour_foundation/14-future-distribution-model.png",
+        "alt": "Proposed shared colour token distribution model",
+        "suggestion": "Show one primitive palette flowing through a portable token format and build pipeline into platform-specific packages. Then show separate semantic layers feeding components, illustrations, and generated media. The diagram should reveal what stays shared and what remains contextual.",
+        "layout": "three-quarter",
+        "description": [
+          "The shared primitive palette would live as one set of design variables and export into a platform-neutral token format. A token build pipeline could then generate the files needed by each codebase. Mobile, web, illustrations, and generated media would all receive the same primitive values from the same source.",
+          "Semantic colours would remain closer to each platform. A hover state on web and a native mobile interaction do not always need the same model. Centralising primitives creates consistency; allowing contextual semantic layers keeps the system useful."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Planning adoption from the edges inward",
+        "paragraphs": [
+          "The safest place to prove the model was Monzo.com. Its design system was already being refactored, making it a useful place to test the new primitive source, export process, and semantic remapping with a smaller product risk.",
+          "From there, other web platforms could follow. Web had the clearest need for additional interaction states and accessible theming, while its current token structures were relatively easy to reconnect. Mobile would come later. That is where the largest audience and the widest use of legacy primitives made the migration more valuable—but also more sensitive.",
+          "This sequence gave the organisation time to learn. The pipeline and naming could be proven on a smaller surface before reaching the platforms used by most customers."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "The code told us what the migration would really cost",
+        "paragraphs": [
+          "Planning could not stop at a Figma proposal. I searched across iOS, Android, and web codebases to find every primitive token reference, raw value, platform-only colour, and token that existed but was no longer used."
+        ]
+      },
+      {
+        "type": "media",
+        "title": "Reading the gap directly in code",
+        "mediaType": "image",
+        "placeholder": "[cross-codebase audit excerpt]",
+        "source": "/assets/img/colour_foundation/06-ios-code-audit.png",
+        "alt": "Code audit showing colour token definitions in a mobile codebase",
+        "suggestion": "Show anonymised search results from iOS, Android, CSS, and backend templates beside a summary of used, unused, direct, and platform-only tokens. The image should reveal hands-on technical fluency and how code evidence shaped the migration estimate.",
+        "layout": "three-quarter",
+        "description": [
+          "The languages and naming patterns differed, so each codebase needed its own investigation. On iOS, the search followed native token references. Android used a different palette structure. Web mixed CSS and preprocessor variables. Backend services and generated media introduced another set of paths.",
+          "This code-level audit separated easy remapping from manual refactoring. It also uncovered unused definitions and platform-only exceptions that a design-library audit could never show. That fluency across design and code made the proposal more realistic: the migration plan came from actual usage, not an estimate made at a distance."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "What a pragmatic foundation unlocks",
+        "paragraphs": [
+          "The proposal framed the value of a shared colour foundation in two ways: making everyday maintenance more consistent, and giving Monzo room to grow. These were the intended benefits of adoption, rather than measured outcomes from a completed rollout."
+        ]
+      },
+      {
+        "type": "comparison",
+        "title": "Consistency and efficiency",
+        "rows": [
+          [
+            "One source for colour distribution",
+            "Shared definitions would reduce duplicate values, manual synchronisation, and the risk of platforms drifting apart. Teams could make updates from a common foundation rather than repeat the same change in several places."
+          ],
+          [
+            "Brand integrity across platforms",
+            "A shared primitive palette would preserve Monzo’s recognisable colour language across mobile, web, and emerging surfaces, while allowing each platform to keep the semantic roles and interactions it needs."
+          ]
+        ]
+      },
+      {
+        "type": "media",
+        "title": "More predictable accessible colour combinations",
+        "description": [
+          "A tonal palette gives teams a more systematic way to find foreground and background combinations. The proposal’s contrast preview shows how candidate tones compare against a selected colour across multiple colour families.",
+          "This makes accessible pairings easier to identify and maintain. Each combination still needs to be checked in its intended context; a structured palette supports that judgement rather than replacing it."
+        ],
+        "mediaType": "image",
+        "source": "/assets/img/colour_foundation/16-predictable-colour-contrast.png",
+        "alt": "Palette generator showing contrast ratios across coral, navy, grey, teal, turquoise, pink, yellow, and orange tonal scales",
+        "layout": "three-quarter"
+      },
+      {
+        "type": "media",
+        "title": "Custom themes without rebuilding components",
+        "description": [
+          "A stable primitive layer would let teams create themes by remapping semantic colour roles, while keeping component logic intact. That opens a path to light and dark modes and future theme variations without building a separate component system for each one.",
+          "The proposal uses colour variations and a theme picker as an illustration of this flexibility, rather than evidence of a shipped Monzo feature."
+        ],
+        "mediaType": "image",
+        "source": "/assets/img/colour_foundation/17-custom-theming.png",
+        "alt": "Illustrative colour themes for buttons and foreground text alongside a theme preferences panel",
+        "layout": "three-quarter"
+      },
+      {
+        "type": "media",
+        "title": "White labelling and third-party brands",
+        "description": [
+          "The same structure could accommodate partner brands: generate a palette from an external brand colour, then map suitable tones to existing semantic roles. The Coca-Cola example illustrates this possibility; it does not represent a Monzo partnership.",
+          "The aim is to support a different brand expression while retaining familiar interaction patterns and checking that the resulting colour pairs remain accessible."
+        ],
+        "mediaType": "image",
+        "source": "/assets/img/colour_foundation/18-third-party-brand-palettes.png",
+        "alt": "Conceptual example mapping Coca-Cola red into a tonal palette for third-party brand integration",
+        "layout": "three-quarter"
+      },
+      {
+        "type": "paragraph",
+        "title": "A stronger foundation for inclusive design",
+        "paragraphs": [
+          "The broader ambition was to make accessibility part of how Monzo defines and evolves colour. Building that consideration into the foundation could help teams create more consistent, thoughtful experiences for people with different visual needs as the product expands."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "What I would carry into the next foundation project",
+        "paragraphs": [
+          "Start with the path a decision takes, not the polished library. The gaps often live between teams, tools, and platforms.",
+          "Keep the existing product as evidence. A scalable system should explain and strengthen what works before it replaces anything.",
+          "Use code to measure the real migration. Token architecture only becomes useful when it accounts for actual implementation.",
+          "Pilot where learning is cheap, then move toward the surfaces with the greatest reach and risk.",
+          "Finally, design the next change process as carefully as the current palette. A foundation is only future-proof when the organisation knows how to evolve it."
+        ]
+      },
+      {
+        "type": "quote",
+        "quote": "A good colour system does not make a brand less expressive. It gives that expression a reliable way to scale."
+      }
+    ]
+  },
+  "access": {
+    "type": "password",
+    "passwordHash": "0c703ea7514ee22d20f86739ab071edb464eb56ec4e4ee93db62fe7dcdaab306"
+  }
+}

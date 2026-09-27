@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "../../../styles/components/Project/Diagram.module.css"
 
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const Diagram = ({ layout, diagrams }) => {
   return (

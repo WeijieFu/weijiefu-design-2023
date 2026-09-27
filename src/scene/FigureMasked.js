@@ -26,6 +26,11 @@ export default function FigureMasked({ invert, ...props }) {
     eyes.current.position.y = 0.02 * state.pointer.y + 0.33
     eyebrow.current.position.y = 0.005 * state.pointer.y
   })
+  const blink = () => {
+    gsap.to(eyes.current.scale, { y: 0.5, duration: 0.1 })
+    gsap.to(eyes.current.scale, { y: 1, duration: 0.1, delay: 0.1 })
+  }
+
   useEffect(() => {
     const id = setInterval(() => {
       blink()
@@ -35,10 +40,6 @@ export default function FigureMasked({ invert, ...props }) {
     }
   }, [])
 
-  const blink = () => {
-    gsap.to(eyes.current.scale, { y: 0.5, duration: 0.1 })
-    gsap.to(eyes.current.scale, { y: 1, duration: 0.1, delay: 0.1 })
-  }
   return (
     <group {...props} dispose={null} ref={figure}>
       <mesh geometry={nodes.Ear.geometry}>

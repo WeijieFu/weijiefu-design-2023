@@ -9,7 +9,7 @@
     font-weight: 200;
 }
 .title{
-    font-size: 6rem;
+    font-size: 4rem;
     text-transform: uppercase;
     margin-top: 5rem;
     opacity: 0.25;
@@ -58,7 +58,7 @@
 @media only screen and (max-width: 1200px) {
    
     .title{
-        font-size: 5rem;
+        font-size: 4rem;
         /* transform: translate(0rem); */
     }
   }

@@ -4,8 +4,8 @@ import styles from "../../../../styles/components/Menu/About.module.css"
 const About = () => {
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1AOqTnBnA3pdBq3ppuNjs20aJcFhpzYyb/view?usp=sharing",
-      "_ blank"
+      "https://drive.google.com/file/d/1tQzPSfq9gYukTgCVQoLDppClf7rwKcbR/view?usp=sharing",
+      "_blank"
     )
   }
   return (
@@ -42,18 +42,13 @@ const About = () => {
       <div className={styles["section"]}>
         <div className={styles["title"]}>Expertise</div>
         <p className={styles["p"]}>
-          Design Research <br />
+          Design System and Operation <br />
+          User Research <br />
           Concept Development <br />
-          Visual Design
-          <br />
-          Interaction Design
-          <br />
-          Wireframing and Prototyping <br />
-          Speed Mockup Developing <br />
-          3D Concept and Visualization <br />
+          Visual and Interaction Design <br />
+          3D Concept and Creative Coding <br />
           Cross-Reality Spacial Experience <br />
-          Cross-Cultural Experience <br />
-          Smart Home and City
+          Cross-Cultural Experience
         </p>
       </div>
 

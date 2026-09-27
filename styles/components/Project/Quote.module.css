@@ -1,0 +1,24 @@
+.container {
+    margin: 4rem 0;
+    padding: 2rem var(--padding-horizontal);
+}
+
+.text {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding-left: 2rem;
+    border-left: 2px solid currentColor;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 2rem 0;
+    }
+
+    .text {
+        padding-left: 1rem;
+    }
+}

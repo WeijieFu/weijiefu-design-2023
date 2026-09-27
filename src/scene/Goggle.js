@@ -10,6 +10,15 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("/assets/model/goggle.glb")
   const model = useRef()
   const nav = useNavStore()
+  const handleMouseMove = (e) => {
+    const state = { pointer: {} }
+    state.pointer.x = (e.clientX - window.innerWidth * 0.5) / window.innerWidth
+    state.pointer.y =
+      -(e.clientY - window.innerHeight * 0.5) / window.innerHeight
+    model.current.rotation.y = 0.025 * state.pointer.x
+    model.current.rotation.x = -0.025 * state.pointer.y
+  }
+
   useEffect(() => {
     if (nav.current === "creativecoding") {
       gsap.to(model.current.position, {
@@ -35,14 +44,6 @@ export default function Model(props) {
     }
   }, [])
 
-  const handleMouseMove = (e) => {
-    const state = { pointer: {} }
-    state.pointer.x = (e.clientX - window.innerWidth * 0.5) / window.innerWidth
-    state.pointer.y =
-      -(e.clientY - window.innerHeight * 0.5) / window.innerHeight
-    model.current.rotation.y = 0.025 * state.pointer.x
-    model.current.rotation.x = -0.025 * state.pointer.y
-  }
   return (
     <group
       {...props}

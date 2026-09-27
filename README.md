@@ -2,21 +2,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Use Node.js 22.23.3 (pinned in `.nvmrc`) and Yarn 1.22.22. With nvm installed:
 
 ```bash
-npm run dev
-# or
-yarn dev
+nvm install
+nvm use
+npx --yes yarn@1.22.22 install --frozen-lockfile
+npx --yes yarn@1.22.22 dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3002. The site uses the Next.js Pages Router and Webpack.
+Keep `yarn.lock` as the dependency lockfile; do not generate a package-lock.json.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+yarn lint
+yarn build
+yarn start -p 3002
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The shared image components use `next/legacy/image` to preserve existing layouts.
+ESLint stays on 9.39.5 because the Next.js config's React, import, and accessibility
+plugins do not yet declare ESLint 10 support. TypeScript 5.9.3 is installed for
+lint tooling compatibility; the application remains JavaScript.
 
 ## Learn More
 

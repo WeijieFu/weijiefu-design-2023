@@ -8,14 +8,6 @@ import { data } from "./data"
 const List = () => {
   const nav = useNavStore()
   const itemsRef = useRef([])
-  itemsRef.current = []
-
-  const addToRefs = (item) => {
-    if (item) {
-      itemsRef.current.push(item)
-    }
-    // console.log(itemsRef)
-  }
   useEffect(() => {
     let tl = gsap.timeline({ delay: 0.75 })
     if (!!nav.current) {
@@ -30,7 +22,8 @@ const List = () => {
         })
       }
     }
-  }, [itemsRef.current])
+    return () => tl.kill()
+  }, [nav.current])
   return (
     <div className={styles["container"]}>
       {!!nav.current &&
@@ -40,7 +33,7 @@ const List = () => {
               data={item}
               index={index}
               key={nav.current + index}
-              ref={addToRefs}
+              ref={(element) => { itemsRef.current[index] = element }}
             />
           )
         })}

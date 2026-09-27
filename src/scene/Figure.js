@@ -28,6 +28,22 @@ export default function Figure(props) {
   const glasses = useRef()
   const group = useRef()
 
+  const blink = () => {
+    gsap.to(eyes.current.scale, { y: 0.5, duration: 0.1 })
+    gsap.to(eyes.current.scale, { y: 1, duration: 0.1, delay: 0.1 })
+  }
+  const handleMouseMove = (e) => {
+    const state = { pointer: {} }
+    state.pointer.x = (e.clientX - window.innerWidth * 0.5) / window.innerWidth
+    state.pointer.y =
+      -(e.clientY - window.innerHeight * 0.5) / window.innerHeight
+    figure.current.rotation.y = 0.1 * state.pointer.x
+    figure.current.rotation.x = -0.025 * state.pointer.y
+    eyes.current.rotation.y = 0.2 * state.pointer.x
+    eyes.current.position.y = 0.02 * state.pointer.y + 0.33
+    eyebrow.current.position.y = 0.02 * state.pointer.y
+  }
+
   useEffect(() => {
     const id = setInterval(() => {
       blink()
@@ -63,22 +79,7 @@ export default function Figure(props) {
     }
   }, [cameraState.position])
 
-  const handleMouseMove = (e) => {
-    const state = { pointer: {} }
-    state.pointer.x = (e.clientX - window.innerWidth * 0.5) / window.innerWidth
-    state.pointer.y =
-      -(e.clientY - window.innerHeight * 0.5) / window.innerHeight
-    figure.current.rotation.y = 0.1 * state.pointer.x
-    figure.current.rotation.x = -0.025 * state.pointer.y
-    eyes.current.rotation.y = 0.2 * state.pointer.x
-    eyes.current.position.y = 0.02 * state.pointer.y + 0.33
-    eyebrow.current.position.y = 0.02 * state.pointer.y
-  }
 
-  const blink = () => {
-    gsap.to(eyes.current.scale, { y: 0.5, duration: 0.1 })
-    gsap.to(eyes.current.scale, { y: 1, duration: 0.1, delay: 0.1 })
-  }
 
   useEffect(() => {
     if (nav.current === "creativecoding") {

@@ -9,6 +9,24 @@
 .image{
     width: 100%;
 }
+.row{
+    display: grid;
+    grid-template-columns: repeat(var(--image-columns, 2), minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+.item{
+    min-width: 0;
+    margin: 0;
+}
+.caption{
+    margin-top: 1rem;
+}
+@media only screen and (max-width: 600px) {
+    .row{
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
 .shadow{
     box-shadow: 0 0 4rem 0.1rem rgba(0,0,0,0.1);
 }

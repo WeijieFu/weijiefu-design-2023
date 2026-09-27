@@ -6,6 +6,10 @@ import Effects from "./Effects"
 import Scene from "./Scene"
 
 import useCameraStore from "../../state/camera"
+
+// Three.js r155 changed light units and point-light decay. These values preserve
+// the scene's original illumination after upgrading from the legacy renderer.
+const LEGACY_LIGHT_SCALE = Math.PI
 // import { getProject } from "@theatre/core"
 // import studio from "@theatre/studio"
 // import extension from "@theatre/r3f/dist/extension"
@@ -30,9 +34,17 @@ function Composition() {
           ],
         }}
       >
-        <ambientLight intensity={0.1} />
-        <pointLight position={[0, 5, 0]} intensity={0.1} />
-        <pointLight position={[-10, 0, 5]} intensity={0.3} />
+        <ambientLight intensity={0.3 * LEGACY_LIGHT_SCALE} />
+        <pointLight
+          position={[0, 5, 0]}
+          intensity={0.2 * LEGACY_LIGHT_SCALE}
+          decay={0}
+        />
+        <pointLight
+          position={[-10, 0, 5]}
+          intensity={1 * LEGACY_LIGHT_SCALE}
+          decay={0}
+        />
         {/* <OrbitControls /> */}
         <Scene />
         {/* <Stats /> */}
