@@ -29,14 +29,6 @@ const TRANSITION_MODES = {
 let activeSection = "home"
 
 const TRANSITION_SHADER = {
-  uniforms: {
-    matcapFrom: { value: null },
-    matcapTo: { value: null },
-    matcapProgress: { value: 1 },
-    matcapSoftness: { value: 0.28 },
-    matcapDirection: { value: 1 },
-    matcapMode: { value: TRANSITION_MODES.diagonal },
-  },
   vertexHeader: "varying vec3 vTransitionPosition;\n",
   vertexBody:
     "#include <worldpos_vertex>\n  vTransitionPosition = (modelMatrix * vec4(transformed, 1.0)).xyz;",
@@ -95,7 +87,7 @@ function getTransitionMode() {
 
 export default function TransitionMatcapMaterial({
   transitionSoftness = 0.28,
-  transitionDuration = 1,
+  transitionDuration = 2,
   transitionDelay = 0,
   ...props
 }) {
@@ -105,9 +97,14 @@ export default function TransitionMatcapMaterial({
   const progress = useRef({ value: 1 })
   const fromSection = useRef(getSectionKey(nav.current))
   const toSection = useRef(getSectionKey(nav.current))
+  const fromTextureId = useRef(ACTIVE_TEXTURE[getSectionKey(nav.current)])
+  const toTextureId = useRef(ACTIVE_TEXTURE[getSectionKey(nav.current)])
   const currentSection = getSectionKey(nav.current)
   const direction = useRef(1)
   const transitionMode = useRef(getTransitionMode())
+  const [displayTextureId, setDisplayTextureId] = useState(
+    ACTIVE_TEXTURE[currentSection]
+  )
   const [showWireframe, setShowWireframe] = useState(
     currentSection === "creativecoding"
   )
@@ -163,6 +160,7 @@ export default function TransitionMatcapMaterial({
     const previousSection = toSection.current
     const nextSection = currentSection
     let wireframeDelay
+    let displayTextureDelay
     syncActiveTexture(nextSection)
     const previousTextureId = ACTIVE_TEXTURE[previousSection]
     const nextTextureId = ACTIVE_TEXTURE[nextSection]
@@ -176,6 +174,8 @@ export default function TransitionMatcapMaterial({
       return
     }
 
+    setDisplayTextureId(previousTextureId)
+
     if (nextSection === "creativecoding") {
       wireframeDelay = gsap.delayedCall(transitionDuration * 0.45, () => {
         setShowWireframe(true)
@@ -186,6 +186,8 @@ export default function TransitionMatcapMaterial({
 
     fromSection.current = previousSection
     toSection.current = nextSection
+    fromTextureId.current = previousTextureId
+    toTextureId.current = nextTextureId
     direction.current = getTransitionDirection(previousSection, nextSection)
     progress.current.value = 0
 
@@ -196,8 +198,16 @@ export default function TransitionMatcapMaterial({
       ease: "power2.out",
     })
 
+    displayTextureDelay = gsap.delayedCall(
+      transitionDelay + transitionDuration,
+      () => {
+        setDisplayTextureId(nextTextureId)
+      }
+    )
+
     return () => {
       wireframeDelay?.kill()
+      displayTextureDelay?.kill()
     }
   }, [currentSection, matcaps, transitionDelay, transitionDuration])
 
@@ -207,10 +217,8 @@ export default function TransitionMatcapMaterial({
     }
 
     const uniforms = shader.current.uniforms
-    uniforms.matcapFrom.value =
-      matcaps[ACTIVE_TEXTURE[fromSection.current]] || matcaps[TEXTURE.home]
-    uniforms.matcapTo.value =
-      matcaps[ACTIVE_TEXTURE[toSection.current]] || matcaps[TEXTURE.home]
+    uniforms.matcapFrom.value = matcaps[fromTextureId.current] || matcaps[TEXTURE.home]
+    uniforms.matcapTo.value = matcaps[toTextureId.current] || matcaps[TEXTURE.home]
     uniforms.matcapProgress.value = progress.current.value
     uniforms.matcapSoftness.value = transitionSoftness
     uniforms.matcapDirection.value = direction.current
@@ -220,19 +228,16 @@ export default function TransitionMatcapMaterial({
   return (
     <meshMatcapMaterial
       ref={material}
-      matcap={matcaps[ACTIVE_TEXTURE[currentSection]] || matcaps[TEXTURE.home]}
+      matcap={matcaps[displayTextureId] || matcaps[TEXTURE.home]}
       wireframe={showWireframe}
       onBeforeCompile={(compiledShader) => {
         shader.current = compiledShader
-        compiledShader.uniforms.matcapFrom = TRANSITION_SHADER.uniforms.matcapFrom
-        compiledShader.uniforms.matcapTo = TRANSITION_SHADER.uniforms.matcapTo
-        compiledShader.uniforms.matcapProgress =
-          TRANSITION_SHADER.uniforms.matcapProgress
-        compiledShader.uniforms.matcapSoftness =
-          TRANSITION_SHADER.uniforms.matcapSoftness
-        compiledShader.uniforms.matcapDirection =
-          TRANSITION_SHADER.uniforms.matcapDirection
-        compiledShader.uniforms.matcapMode = TRANSITION_SHADER.uniforms.matcapMode
+        compiledShader.uniforms.matcapFrom = { value: null }
+        compiledShader.uniforms.matcapTo = { value: null }
+        compiledShader.uniforms.matcapProgress = { value: 1 }
+        compiledShader.uniforms.matcapSoftness = { value: transitionSoftness }
+        compiledShader.uniforms.matcapDirection = { value: direction.current }
+        compiledShader.uniforms.matcapMode = { value: transitionMode.current }
 
         compiledShader.vertexShader = compiledShader.vertexShader
           .replace("void main() {", `${TRANSITION_SHADER.vertexHeader}void main() {`)
@@ -279,6 +284,7 @@ export default function TransitionMatcapMaterial({
   transitionMask = matcapMode > 0.5 && matcapMode < 1.5 ? radialMask : transitionMask;
   transitionMask = matcapMode > 1.5 && matcapMode < 2.5 ? verticalMask : transitionMask;
   transitionMask = matcapMode > 2.5 ? dissolveMask : transitionMask;
+  transitionMask = mix(matcapProgress, transitionMask, 0.72);
   transitionMask = matcapProgress < 0.02 ? 0.0 : transitionMask;
   transitionMask = matcapProgress > 0.98 ? 1.0 : transitionMask;
   vec4 matcapColor = mix(matcapFromColor, matcapToColor, transitionMask);
