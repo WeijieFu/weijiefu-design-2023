@@ -54,10 +54,10 @@ export default function Model(props) {
       <group position={[0, -0.33, 0]}>
         <group ref={model}>
           <mesh geometry={nodes.Lens.geometry}>
-            <meshStandardMaterial color="grey" wireframe />
+            <meshStandardMaterial color="grey" />
           </mesh>
           <mesh geometry={nodes.Plane.geometry}>
-            <meshStandardMaterial color="grey" wireframe />
+            <meshStandardMaterial color="grey" />
           </mesh>
         </group>
       </group>
